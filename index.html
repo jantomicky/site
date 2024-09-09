@@ -4,39 +4,64 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jan Tomický, Backend Developer</title>
-<script src="https://cdn.tailwindcss.com"></script>
+<title>Jan Tomický | Backend Developer</title>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/base16/ia-dark.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/json.min.js"></script>
 </head>
 
-<body class="min-h-screen bg-gradient-to-b from-gray-950 to-gray-900 flex items-center justify-center">
-<main class="bg-gray-800 px-16 py-8 whitespace-pre-wrap text-lg text-gray-300 tracking-wide leading-loose rounded-lg shadow-lg">
-    {
-        <span class="text-pink-300">"personal_info"</span>: {
-            <span class="text-pink-300">"name"</span>: "Jan Tomický",
-            <span class="text-pink-300">"title"</span>: "Backend Developer",
-            <span class="text-pink-300">"phone"</span>: "<a href="tel:+&#52;&#50;&#48;&#55;&#51;&#48;&#57;&#57;&#56;&#50;&#49;&#54;" class="underline underline-offset-4" title="Phone">+&#52;&#50;&#48;&#55;&#51;&#48;&#57;&#57;&#56;&#50;&#49;&#54;</a>",
-            <span class="text-pink-300">"e-mail"</span>: "<a href="mailto:&#106;&#97;&#110;&#64;&#116;&#111;&#109;&#105;&#99;&#107;&#121;&#46;&#99;&#122;" class="underline underline-offset-4" title="E-mail">&#106;&#97;&#110;&#64;&#116;&#111;&#109;&#105;&#99;&#107;&#121;&#46;&#99;&#122;</a>",
-            <span class="text-pink-300">"github"</span>: "<a href="https://github.com/jantomicky" title="GitHub" class="underline underline-offset-4" target="_blank">https://github.com/jantomicky</a>",
-            <span class="text-pink-300">"linkedin"</span>: "<a href="https://linkedin.com/in/jantomicky" title="LinkedIn" class="underline underline-offset-4" target="_blank">https://linkedin.com/in/jantomicky</a>"
-        },
-        <span class="text-pink-300">"skills_and_tools"</span>: {
-            <span class="text-pink-300">"php"</span>: "Version ~8, PhpStorm + GitHub Copilot, PHPStan, PHP-CS-Fixer"
-            <span class="text-pink-300">"testing"</span>: "Codeception + Mockery"
-            <span class="text-pink-300">"pimcore"</span>: "Certified <a href="https://pimcore.com" title="Pimcore, open-source data platform built with Symfony" class="underline underline-offset-4" target="_blank">Pimcore</a> Developer Senior"
-            <span class="text-pink-300">"symfony"</span>: "Daily use",
-            <span class="text-pink-300">"git"</span>: "Daily use, GitHub pull request + review",
-            <span class="text-pink-300">"docker"</span>: "Docker Compose for local development",
-            <span class="text-pink-300">"(my)sql"</span>: "Ability to set up, configure & use",
-            <span class="text-pink-300">"ansible"</span>: "Ability to provision Linux hosts",
-            <span class="text-pink-300">"other"</span>: "Linux & Shell, Elasticsearch, RabbitMQ, basic Python 3",
-        },
-        <span class="text-pink-300">"notes"</span>: [
-            "[2024-09] Available for part-time work",
-            "[2024-09] Now working on an API project built with <a href="https://nestjs.com" title="NestJS, a Node.js framework" class="underline underline-offset-4" target="_blank">Nest.js</a>"
-        ]
-    }
+<body class="min-h-screen flex items-center justify-center bg-neutral-800">
 
+<main class="hljs relative w-full md:max-w-fit md:border-2 md:border-x-neutral-700 md:border-y-0 text-sm md:text-lg">
+    <nav class="absolute right-0 flex flex-row space-x-6 px-4 py-2 bg-neutral-800">
+        <a href="tel:&#43;420730998216" class="hover:text-gray-400" title="Phone"><i class="fas fa-phone"></i></a>
+        <a href="mailto:jan&#64;tomicky.cz" class="hover:text-gray-400" title="E-mail"><i class="fas fa-envelope"></i></a>
+        <a href="https://github.com/jantomicky" class="hover:text-gray-400" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="https://linkedin.com/in/jantomicky" class="hover:text-gray-400" title="LinkedIn" target="_blank"><i class="fab fa-linkedin"></i></a>
+    </nav>
+
+    <pre class="px-4 py-2 md:px-8 md:py-4 leading-relaxed"><code id="me" class="language-json"></code></pre>
 </main>
+
+<script>
+    const myDetails = {
+        "contact_info": {
+            "name": "Jan Tomický",
+            "title": "Backend Developer",
+            "phone": "&#43;420730998216",
+            "e-mail": "jan&#64;tomicky.cz",
+            "github": "jantomicky",
+            "linkedin": "jantomicky",
+        },
+        "skills_and_tools": {
+            "php": ["Version ~8", "PhpStorm & GitHub Copilot", "PHPStan", "PHP-CS-Fixer", "Codeception & Mockery"],
+            "pimcore": ["Certified", "Pimcore Developer Senior"],
+            "symfony": ["Daily use", "DI, Events, Messenger, Console"],
+            "git": ["Daily use, GitHub (PR & review)"],
+            "others": ["Docker (Compose for DEV)", "MySQL", "Linux, Shell", "Ansible", "Elasticsearch", "RabbitMQ"],
+        },
+        "notes_and_goals": [
+            {
+                "date": "2024-09",
+                "note": "Free for part-time work"
+            },
+            {
+                "date": "2024-09",
+                "note": "Working on a Nest.js API"
+            },
+        ]
+    };
+
+    let me = document.getElementById('me');
+    let content = JSON.stringify(myDetails, null, 2);
+
+    me.innerHTML = content;
+
+    hljs.highlightElement(me);
+</script>
 </body>
 
 </html>
